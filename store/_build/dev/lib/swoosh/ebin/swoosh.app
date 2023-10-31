@@ -4,7 +4,7 @@
               {applications,[kernel,stdlib,elixir,logger,xmerl,mime,jason,
                              telemetry,hackney,finch,mail,gen_smtp,cowboy,
                              plug,plug_cowboy,ex_aws]},
-              {description,"Compose, deliver and test your emails easily in Elixir. Supports SMTP,\nSendgrid, Mandrill, Postmark, Mailgun and many more out of the box.\nPreview your emails in the browser. Test your email sending code.\n"},
+              {description,"Compose, deliver and test your emails easily in Elixir. Supports SMTP,\r\nSendgrid, Mandrill, Postmark, Mailgun and many more out of the box.\r\nPreview your emails in the browser. Test your email sending code.\r\n"},
               {modules,['Elixir.Mix.Tasks.Swoosh.Mailbox.Server',
                         'Elixir.Plug.Swoosh.MailboxPreview','Elixir.Swoosh',
                         'Elixir.Swoosh.Adapter',
