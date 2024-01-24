@@ -18,11 +18,29 @@ defmodule StoreWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/home", PageController, :home
-    get "/menu", PageController, :menu
-    get "/about", PageController, :about
-    get "/products", PageController, :products
-    get "/contact", PageController, :contact
+    get "/home_page", PageController, :home
+    get "/menu_page", PageController, :menu
+    get "/about_page", PageController, :about
+    get "/products_page", PageController, :products
+    get "/contact_page", PageController, :contact
+    get "/signup_page", PageController, :signup
+    get "/login_page", PageController, :login
+
+    get "/products", ProductController, :index
+    get "/products/new", ProductController, :new
+    post "/products", ProductController, :create
+    get "/products/:id", ProductController, :show
+    get "/products/:id/edit", ProductController, :edit
+    put "/products/:id", ProductController, :update
+    delete "/products/:id", ProductController, :delete
+
+    get "/items", ItemController, :index
+    get "/items/new", ItemController, :new
+    post "/items", ItemController, :create
+    get "/items/:id", ItemController, :show
+    get "/items/:id/edit", ItemController, :edit
+    put "/items/:id", ItemController, :update
+    delete "/items/:id", ItemController, :delete
   end
 
   # Other scopes may use custom stacks.

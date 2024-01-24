@@ -2,7 +2,7 @@
              [{optional_applications,[phoenix_view,jason]},
               {applications,[kernel,stdlib,elixir,logger,phoenix,phoenix_view,
                              phoenix_template,phoenix_html,telemetry,jason]},
-              {description,"Rich, real-time user experiences with server-rendered HTML\r\n"},
+              {description,"Rich, real-time user experiences with server-rendered HTML\n"},
               {modules,['Elixir.Enumerable.Phoenix.LiveView.LiveStream',
                         'Elixir.Inspect.Phoenix.LiveView.Socket',
                         'Elixir.Inspect.Phoenix.LiveView.Socket.AssignsNotInSocket',

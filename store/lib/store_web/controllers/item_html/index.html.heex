@@ -1,0 +1,28 @@
+<.header>
+  Listing Item
+  <:actions>
+    <.link href={~p"/items/new"}>
+      <.button>New Item</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="items" rows={@item_collection} row_click={&JS.navigate(~p"/items/#{&1}")}>
+  <:col :let={item} label="Item ID"><%= item.id %></:col>
+  <:col :let={item} label="Item Name"><%= item.name %></:col>
+  <:col :let={item} label="Item Description"><%= item.description %></:col>
+  <:col :let={item} label="Item Price"><%= item.price %></:col>
+  <:col :let={item} label="Item Category"><%= item.category %></:col>
+
+  <:action :let={item}>
+    <div class="sr-only">
+      <.link navigate={~p"/items/#{item}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/items/#{item}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={item}>
+    <.link href={~p"/items/#{item}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

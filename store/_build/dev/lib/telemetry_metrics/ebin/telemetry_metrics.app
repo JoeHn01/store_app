@@ -1,7 +1,7 @@
 {application,telemetry_metrics,
              [{optional_applications,[]},
               {applications,[kernel,stdlib,elixir,logger,telemetry]},
-              {description,"Provides a common interface for defining metrics based on Telemetry events.\r\n"},
+              {description,"Provides a common interface for defining metrics based on Telemetry events.\n"},
               {modules,['Elixir.Telemetry.Metrics',
                         'Elixir.Telemetry.Metrics.ConsoleReporter',
                         'Elixir.Telemetry.Metrics.Counter',

@@ -22,4 +22,12 @@ defmodule StoreWeb.PageController do
   def contact(conn, _params) do
     render(conn, :contact, layout: false)
   end
+
+  def signup(conn, _params) do
+    render(conn, :signup, layout: false)
+  end
+
+  def login(conn, _params) do
+    render(conn, :login, layout: false)
+  end
 end

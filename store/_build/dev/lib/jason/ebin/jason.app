@@ -1,7 +1,7 @@
 {application,jason,
              [{optional_applications,[decimal]},
               {applications,[kernel,stdlib,elixir,decimal]},
-              {description,"A blazing fast JSON parser and generator in pure Elixir.\r\n"},
+              {description,"A blazing fast JSON parser and generator in pure Elixir.\n"},
               {modules,['Elixir.Enumerable.Jason.OrderedObject',
                         'Elixir.Jason','Elixir.Jason.Codegen',
                         'Elixir.Jason.DecodeError','Elixir.Jason.Decoder',
