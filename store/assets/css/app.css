@@ -3,6 +3,38 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
-.app-container {
-    margin: 20px;
+.bg-gradient-container {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #2196F3, #4CAF50, #FF5722);
 }
+
+body {
+    background-color: lightslategrey;
+    color: black;
+    margin: 0;
+    padding: 0;
+  }
+
+.content-container {
+    padding: 50px;
+
+}
+
+  .featured-products {
+    margin-top: 2rem;
+  }
+
+  .product-card {
+    color: #333;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 160px; /* Adjust the height as needed */
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }

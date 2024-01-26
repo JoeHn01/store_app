@@ -1,29 +1,20 @@
-<header class="px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
-    <div class="flex items-center gap-4">
-      <a href="/">
-        <img src={~p"/images/logo.svg"} width="36" />
-      </a>
-      <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v<%= Application.spec(:phoenix, :vsn) %>
-      </p>
-    </div>
-    <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
-      >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
+<.top_header class="bg-gradient-container p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-white">
+      <a href="home_page" class="text-white hover:text-blue-800">My Store</a>
+    </h1>
+    <nav class="space-x-4">
+      <a href="home_page" class="text-white hover:text-blue-800">Home</a>
+      <a href="menu_page" class="text-white hover:text-blue-800">Menu</a>
+      <a href="products_page" class="text-white hover:text-blue-800">Products</a>
+      <a href="about_page" class="text-white hover:text-blue-800">About Us</a>
+      <a href="contact_page" class="text-white hover:text-blue-800">Contact Us</a>
+      <a href="signup_page" class="text-white hover:text-blue-800">Sign Up</a>
+      <a href="login_page" class="text-white hover:text-blue-800">Log In</a>
+    </nav>
   </div>
-</header>
+</.top_header>
+
 <main class="px-4 py-20 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-2xl">
     <.flash_group flash={@flash} />
