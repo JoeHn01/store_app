@@ -1,0 +1,101 @@
+<.top_header class="bg-gradient-container p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-white">
+        <.link href="/" class="text-white hover:text-blue-800">My Store</.link>
+      </h1>
+      <nav class="space-x-4 flex items-center">
+        <.link href="/home_admin_page" class="text-white hover:text-blue-800">Admin</.link>
+        <.link href="/home_page" class="text-white hover:text-blue-800">Home</.link>
+        <.link href="/menu_page" class="text-white hover:text-blue-800">Menu</.link>
+        <.link href="/products_page" class="text-white hover:text-blue-800">Products</.link>
+        <.link href="/about_page" class="text-white hover:text-blue-800">About Us</.link>
+        <.link href="/contact_page" class="text-white hover:text-blue-800">Contact Us</.link>
+  
+        <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
+          <%= if @current_user do %>
+            <li>
+              <.link
+                href={~p"/user/settings"}
+                class="text-white hover:text-blue-800"
+              >
+                Settings
+              </.link>
+            </li>
+            <li>
+              <.link
+                href={~p"/user/log_out"}
+                method="delete"
+                class="text-white hover:text-blue-800"
+              >
+                Log out
+              </.link>
+            </li>
+            <li class="text-white hover:text-blue-800">
+              <%= @current_user.user_name %>
+            </li>
+          <% else %>
+            <li>
+              <.link
+                href={~p"/user/register"}
+                class="text-white hover:text-blue-800"
+              >
+                Register
+              </.link>
+            </li>
+            <li>
+              <.link
+                href={~p"/user/log_in"}
+                class="text-white hover:text-blue-800"
+              >
+                Log in
+              </.link>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+</.top_header>
+<div class="content-container">
+    <ul>
+        <li>
+            <.header>
+                Products
+                <:actions>
+                  <.link href={~p"/products/new"} class="text-black hover:text-pink-400">
+                    <.button>New Product</.button>
+                  </.link>
+                  <.link href={~p"/products"} class="text-black hover:text-pink-400">
+                    <.button>Show All Products</.button>
+                  </.link>
+                </:actions>
+            </.header>
+        </li>
+        <li>
+            <.header>
+                Items
+                <:actions>
+                  <.link href={~p"/items/new"} class="text-black hover:text-pink-400">
+                    <.button>New Item</.button>
+                  </.link>
+                  <.link href={~p"/items"} class="text-black hover:text-pink-400">
+                    <.button>Show All Items</.button>
+                  </.link>
+                </:actions>
+            </.header>
+
+        </li>
+        <li>
+            <.header>
+                Users
+                <:actions>
+                  <.link href={~p"/users/new"} class="text-black hover:text-pink-400">
+                    <.button>New User</.button>
+                  </.link>
+                  <.link href={~p"/users"} class="text-black hover:text-pink-400">
+                    <.button>Show All Users</.button>
+                  </.link>
+                </:actions>
+            </.header>
+        </li>
+    </ul>
+</div>

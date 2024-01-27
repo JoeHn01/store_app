@@ -14,7 +14,7 @@
         <%= if @current_user do %>
           <li>
             <.link
-              href={~p"/users/settings"}
+              href={~p"/user/settings"}
               class="text-white hover:text-blue-800"
             >
               Settings
@@ -22,7 +22,7 @@
           </li>
           <li>
             <.link
-              href={~p"/users/log_out"}
+              href={~p"/user/log_out"}
               method="delete"
               class="text-white hover:text-blue-800"
             >
@@ -35,7 +35,7 @@
         <% else %>
           <li>
             <.link
-              href={~p"/users/register"}
+              href={~p"/user/register"}
               class="text-white hover:text-blue-800"
             >
               Register
@@ -43,7 +43,7 @@
           </li>
           <li>
             <.link
-              href={~p"/users/log_in"}
+              href={~p"/user/log_in"}
               class="text-white hover:text-blue-800"
             >
               Log in

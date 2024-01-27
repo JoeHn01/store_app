@@ -1,59 +1,59 @@
 <.top_header class="bg-gradient-container p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold text-white">
-        <.link href="/" class="text-white hover:text-blue-800">My Store</.link>
-      </h1>
-      <nav class="space-x-4 flex items-center">
-        <.link href="/home_page" class="text-white hover:text-blue-800">Home</.link>
-        <.link href="/menu_page" class="text-white hover:text-blue-800">Menu</.link>
-        <.link href="/products_page" class="text-white hover:text-blue-800">Products</.link>
-        <.link href="/about_page" class="text-white hover:text-blue-800">About Us</.link>
-        <.link href="/contact_page" class="text-white hover:text-blue-800">Contact Us</.link>
-  
-        <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
-          <%= if @current_user do %>
-            <li>
-              <.link
-                href={~p"/users/settings"}
-                class="text-white hover:text-blue-800"
-              >
-                Settings
-              </.link>
-            </li>
-            <li>
-              <.link
-                href={~p"/users/log_out"}
-                method="delete"
-                class="text-white hover:text-blue-800"
-              >
-                Log out
-              </.link>
-            </li>
-            <li class="text-white hover:text-blue-800">
-              <%= @current_user.user_name %>
-            </li>
-          <% else %>
-            <li>
-              <.link
-                href={~p"/users/register"}
-                class="text-white hover:text-blue-800"
-              >
-                Register
-              </.link>
-            </li>
-            <li>
-              <.link
-                href={~p"/users/log_in"}
-                class="text-white hover:text-blue-800"
-              >
-                Log in
-              </.link>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
-    </div>
-  </.top_header>
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-white">
+      <.link href="/" class="text-white hover:text-blue-800">My Store</.link>
+    </h1>
+    <nav class="space-x-4 flex items-center">
+      <.link href="/home_page" class="text-white hover:text-blue-800">Home</.link>
+      <.link href="/menu_page" class="text-white hover:text-blue-800">Menu</.link>
+      <.link href="/products_page" class="text-white hover:text-blue-800">Products</.link>
+      <.link href="/about_page" class="text-white hover:text-blue-800">About Us</.link>
+      <.link href="/contact_page" class="text-white hover:text-blue-800">Contact Us</.link>
+
+      <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
+        <%= if @current_user do %>
+          <li>
+            <.link
+              href={~p"/user/settings"}
+              class="text-white hover:text-blue-800"
+            >
+              Settings
+            </.link>
+          </li>
+          <li>
+            <.link
+              href={~p"/user/log_out"}
+              method="delete"
+              class="text-white hover:text-blue-800"
+            >
+              Log out
+            </.link>
+          </li>
+          <li class="text-white hover:text-blue-800">
+            <%= @current_user.user_name %>
+          </li>
+        <% else %>
+          <li>
+            <.link
+              href={~p"/user/register"}
+              class="text-white hover:text-blue-800"
+            >
+              Register
+            </.link>
+          </li>
+          <li>
+            <.link
+              href={~p"/user/log_in"}
+              class="text-white hover:text-blue-800"
+            >
+              Log in
+            </.link>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</.top_header>
 
 <div class="content-container">
 <section class="my-8 relative">
@@ -62,25 +62,25 @@
         <div class="flex space-x-4 products-scroll">
             <!-- Product 1 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product1.jpg" alt="Product 1" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 1" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 1</h3>
                 <p class="text-gray-500">Description of Product 1.</p>
             </div>
             <!-- Product 2 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product2.jpg" alt="Product 2" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 2" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 2</h3>
                 <p class="text-gray-500">Description of Product 2.</p>
             </div>
             <!-- Product 3 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product3.jpg" alt="Product 3" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 3" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 3</h3>
                 <p class="text-gray-500">Description of Product 3.</p>
             </div>
             <!-- Product 4 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product4.jpg" alt="Product 4" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 4" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 4</h3>
                 <p class="text-gray-500">Description of Product 4.</p>
             </div>
@@ -95,25 +95,25 @@
         <div class="flex space-x-4 products-scroll">
             <!-- Product 1 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product1.jpg" alt="Product 1" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 1" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 1</h3>
                 <p class="text-gray-500">Description of Product 1.</p>
             </div>
             <!-- Product 2 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product2.jpg" alt="Product 2" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 2" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 2</h3>
                 <p class="text-gray-500">Description of Product 2.</p>
             </div>
             <!-- Product 3 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product3.jpg" alt="Product 3" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 3" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 3</h3>
                 <p class="text-gray-500">Description of Product 3.</p>
             </div>
             <!-- Product 4 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product4.jpg" alt="Product 4" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 4" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 4</h3>
                 <p class="text-gray-500">Description of Product 4.</p>
             </div>
@@ -128,25 +128,25 @@
         <div class="flex space-x-4 products-scroll">
             <!-- Product 1 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product1.jpg" alt="Product 1" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 1" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 1</h3>
                 <p class="text-gray-500">Description of Product 1.</p>
             </div>
             <!-- Product 2 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product2.jpg" alt="Product 2" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 2" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 2</h3>
                 <p class="text-gray-500">Description of Product 2.</p>
             </div>
             <!-- Product 3 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product3.jpg" alt="Product 3" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 3" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 3</h3>
                 <p class="text-gray-500">Description of Product 3.</p>
             </div>
             <!-- Product 4 -->
             <div class="bg-white p-4 rounded shadow product-card">
-                <img src="product4.jpg" alt="Product 4" class="w-full h-40 object-cover rounded">
+                <img src="" alt="Product 4" class="w-full h-40 object-cover rounded">
                 <h3 class="text-lg font-medium mt-2">Product 4</h3>
                 <p class="text-gray-500">Description of Product 4.</p>
             </div>

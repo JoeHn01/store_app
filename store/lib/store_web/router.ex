@@ -21,6 +21,7 @@ defmodule StoreWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/home_admin_page", PageController, :home_admin
     get "/home_page", PageController, :home
     get "/menu_page", PageController, :menu
     get "/about_page", PageController, :about
@@ -34,7 +35,7 @@ defmodule StoreWeb.Router do
     post "/products", ProductController, :create
     get "/products/:id", ProductController, :show
     get "/products/:id/edit", ProductController, :edit
-    put "/products/:id", ProductController, :update
+    put "/products/update/:id", ProductController, :update
     delete "/products/:id", ProductController, :delete
 
     get "/items", ItemController, :index
@@ -42,8 +43,16 @@ defmodule StoreWeb.Router do
     post "/items", ItemController, :create
     get "/items/:id", ItemController, :show
     get "/items/:id/edit", ItemController, :edit
-    put "/items/:id", ItemController, :update
+    put "/items/update/:id", ItemController, :update
     delete "/items/:id", ItemController, :delete
+
+    get "/users", UserController, :index
+    get "/users/new", UserController, :new
+    post "/users", UserController, :create
+    get "/users/:id", UserController, :show
+    get "/users/:id/edit", UserController, :edit
+    put "/users/update/:id", UserController, :update
+    delete "/users/:id", UserController, :delete
   end
 
   # Other scopes may use custom stacks.
@@ -75,13 +84,13 @@ defmodule StoreWeb.Router do
 
     live_session :redirect_if_user_is_authenticated,
       on_mount: [{StoreWeb.UserAuth, :redirect_if_user_is_authenticated}] do
-      live "/users/register", UserRegistrationLive, :new
-      live "/users/log_in", UserLoginLive, :new
-      live "/users/reset_password", UserForgotPasswordLive, :new
-      live "/users/reset_password/:token", UserResetPasswordLive, :edit
+      live "/user/register", UserRegistrationLive, :new
+      live "/user/log_in", UserLoginLive, :new
+      live "/user/reset_password", UserForgotPasswordLive, :new
+      live "/user/reset_password/:token", UserResetPasswordLive, :edit
     end
 
-    post "/users/log_in", UserSessionController, :create
+    post "/user/log_in", UserSessionController, :create
   end
 
   scope "/", StoreWeb do
@@ -89,20 +98,20 @@ defmodule StoreWeb.Router do
 
     live_session :require_authenticated_user,
       on_mount: [{StoreWeb.UserAuth, :ensure_authenticated}] do
-      live "/users/settings", UserSettingsLive, :edit
-      live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+      live "/user/settings", UserSettingsLive, :edit
+      live "/user/settings/confirm_email/:token", UserSettingsLive, :confirm_email
     end
   end
 
   scope "/", StoreWeb do
     pipe_through [:browser]
 
-    delete "/users/log_out", UserSessionController, :delete
+    delete "/user/log_out", UserSessionController, :delete
 
     live_session :current_user,
       on_mount: [{StoreWeb.UserAuth, :mount_current_user}] do
-      live "/users/confirm/:token", UserConfirmationLive, :edit
-      live "/users/confirm", UserConfirmationInstructionsLive, :new
+      live "/user/confirm/:token", UserConfirmationLive, :edit
+      live "/user/confirm", UserConfirmationInstructionsLive, :new
     end
   end
 end

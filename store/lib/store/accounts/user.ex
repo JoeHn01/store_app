@@ -16,6 +16,15 @@ defmodule Store.Accounts.User do
     timestamps()
   end
 
+  @doc false
+  def changeset(user, attrs, opts \\ []) do
+    user
+    |> cast(attrs, [:user_name, :first_name, :last_name, :email, :password])
+    |> validate_required([:user_name, :first_name, :last_name])
+    |> validate_email(opts)
+    |> validate_password(opts)
+  end
+
   @doc """
   A user changeset for registration.
 
