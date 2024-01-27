@@ -1,21 +1,61 @@
 <.top_header class="bg-gradient-container p-4">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-3xl font-bold text-white">
-        <a href="home_page" class="text-white hover:text-blue-800">My Store</a>
+        <.link href="/" class="text-white hover:text-blue-800">My Store</.link>
       </h1>
-      <nav class="space-x-4">
-        <a href="home_page" class="text-white hover:text-blue-800">Home</a>
-        <a href="menu_page" class="text-white hover:text-blue-800">Menu</a>
-        <a href="products_page" class="text-white hover:text-blue-800">Products</a>
-        <a href="about_page" class="text-white hover:text-blue-800">About Us</a>
-        <a href="contact_page" class="text-white hover:text-blue-800">Contact Us</a>
-        <a href="signup_page" class="text-white hover:text-blue-800">Sign Up</a>
-        <a href="login_page" class="text-white hover:text-blue-800">Log In</a>
+      <nav class="space-x-4 flex items-center">
+        <.link href="/home_page" class="text-white hover:text-blue-800">Home</.link>
+        <.link href="/menu_page" class="text-white hover:text-blue-800">Menu</.link>
+        <.link href="/products_page" class="text-white hover:text-blue-800">Products</.link>
+        <.link href="/about_page" class="text-white hover:text-blue-800">About Us</.link>
+        <.link href="/contact_page" class="text-white hover:text-blue-800">Contact Us</.link>
+  
+        <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
+          <%= if @current_user do %>
+            <li>
+              <.link
+                href={~p"/users/settings"}
+                class="text-white hover:text-blue-800"
+              >
+                Settings
+              </.link>
+            </li>
+            <li>
+              <.link
+                href={~p"/users/log_out"}
+                method="delete"
+                class="text-white hover:text-blue-800"
+              >
+                Log out
+              </.link>
+            </li>
+            <li class="text-white hover:text-blue-800">
+              <%= @current_user.user_name %>
+            </li>
+          <% else %>
+            <li>
+              <.link
+                href={~p"/users/register"}
+                class="text-white hover:text-blue-800"
+              >
+                Register
+              </.link>
+            </li>
+            <li>
+              <.link
+                href={~p"/users/log_in"}
+                class="text-white hover:text-blue-800"
+              >
+                Log in
+              </.link>
+            </li>
+          <% end %>
+        </ul>
       </nav>
     </div>
   </.top_header>
 
-<div class="app-container">
+<div class="content-container">
 <section class="my-8 relative">
     <h2 class="text-2xl font-semibold">Featured Products</h2>
     <div class="overflow-x-hidden mt-4">
