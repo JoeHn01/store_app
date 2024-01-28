@@ -51,7 +51,7 @@ defmodule StoreWeb.Router do
     post "/users", UserController, :create
     get "/users/:id", UserController, :show
     get "/users/:id/edit", UserController, :edit
-    put "/users/update/:id", UserController, :update
+    put "/users/:id", UserController, :update
     delete "/users/:id", UserController, :delete
   end
 
