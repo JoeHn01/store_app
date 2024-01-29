@@ -14072,3 +14072,9 @@ Last message received: handle_request %{"id" => 0, "jsonrpc" => "2.0", "method" 
 01:05:36.159 id=43 [debug] handled request client -> server textDocument/hover in 1ms
 
 01:05:37.770 id=44 [debug] handled request client -> server textDocument/hover in 1ms
+
+01:30:45.166 id=45 [debug] handled request client -> server textDocument/hover in 685µs
+
+01:30:45.172 [debug] handled notification client -> server $/cancelRequest in 5ms
+
+01:31:24.312 id=46 [debug] handled request client -> server textDocument/hover in 397µs
