@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  phoenix:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGDATABASE: store_dev
+      PGHOST: db
+      PGPORT: 5432
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: store_dev
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
