@@ -1,53 +1,41 @@
 <.top_header class="bg-gradient-container p-4">
   <div class="container mx-auto flex justify-between items-center">
-    <h1 class="text-3xl font-bold text-white">
-      <.link href="/" class="text-white hover:text-blue-800">My Store</.link>
-    </h1>
+    <.header class="text-3xl font-bold text-white">
+      <.link href={~p"/"} class="text-white hover:text-blue-800">My Store</.link>
+    </.header>
     <nav class="space-x-4 flex items-center">
-      <.link href="/home_page" class="text-white hover:text-blue-800">Home</.link>
-      <.link href="/menu_page" class="text-white hover:text-blue-800">Menu</.link>
-      <.link href="/products_page" class="text-white hover:text-blue-800">Products</.link>
-      <.link href="/about_page" class="text-white hover:text-blue-800">About Us</.link>
-      <.link href="/contact_page" class="text-white hover:text-blue-800">Contact Us</.link>
-
       <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
+        <li>
+          <.link href={~p"/home_page"} class="text-white hover:text-blue-800">Home</.link>
+        </li>
+        <li>
+          <.link href={~p"/menu_page"} class="text-white hover:text-blue-800">Menu</.link>
+        </li>
+        <li>
+          <.link href={~p"/products_page"} class="text-white hover:text-blue-800">Products</.link>
+        </li>
+        <li>
+          <.link href={~p"/about_page"} class="text-white hover:text-blue-800">About Us</.link>
+        </li>
         <%= if @current_user do %>
           <li>
-            <.link
-              href={~p"/user/settings"}
-              class="text-white hover:text-blue-800"
-            >
-              Settings
-            </.link>
+            <.link href={~p"/contact_page"} class="text-white hover:text-blue-800">Contact Us</.link>
           </li>
           <li>
-            <.link
-              href={~p"/user/log_out"}
-              method="delete"
-              class="text-white hover:text-blue-800"
-            >
-              Log out
-            </.link>
+            <.link href={~p"/user/settings"} class="text-white hover:text-blue-800">Settings</.link>
+          </li>
+          <li>
+            <.link href={~p"/user/log_out"} method="delete" class="text-white hover:text-blue-800">Log out</.link>
           </li>
           <li class="text-white hover:text-blue-800">
             <%= @current_user.user_name %>
           </li>
         <% else %>
           <li>
-            <.link
-              href={~p"/user/register"}
-              class="text-white hover:text-blue-800"
-            >
-              Register
-            </.link>
+            <.link href={~p"/user/register"} class="text-white hover:text-blue-800">Register</.link>
           </li>
           <li>
-            <.link
-              href={~p"/user/log_in"}
-              class="text-white hover:text-blue-800"
-            >
-              Log in
-            </.link>
+            <.link href={~p"/user/log_in"} class="text-white hover:text-blue-800">Log in</.link>
           </li>
         <% end %>
       </ul>
@@ -55,112 +43,20 @@
   </div>
 </.top_header>
 
-<div class="content-container mx-auto mt-10">
-    <h1 class="text-4xl font-bold mb-4">Our Menu</h1>
-    
-    <!-- Appetizers Section -->
-    <div class="max-w-screen-lg">
-      <h2 class="text-2xl font-semibold">Appetizers</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <!-- Appetizer 1 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img src="" alt="Appetizer 1" class="w-full h-48 object-cover rounded-lg">
-          <h2 class="text-2xl font-semibold mt-2">Appetizer 1</h2>
-          <p class="text-gray-600 mt-2">Delicious appetizer with a special sauce.</p>
-          <p class="text-xl font-semibold mt-2">$5.99</p>
+<div class="content-container">
+  <%= for {category, items} <- @items_by_category do %>
+  <section class="category-heading">
+    <.header><%= category %></.header>
+    <div class="category-items">
+      <%= for item <- items do %>
+        <div class="category-item">
+          <img src="" class="w-full h-48 object-cover rounded-lg">
+          <.header><%= item.name %></.header>
+          <p><%= item.description %></p>
+          <p class="price">$<%= Decimal.to_string(item.price) %></p>
         </div>
-        <!-- Appetizer 2 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img src="" alt="Appetizer 2" class="w-full h-48 object-cover rounded-lg">
-          <h2 class="text-2xl font-semibold mt-2">Appetizer 2</h2>
-          <p class="text-gray-600 mt-2">A combination of flavors in a bite-sized package.</p>
-          <p class="text-xl font-semibold mt-2">$4.49</p>
-        </div>
-        <!-- Appetizer 3 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img src="" alt="Appetizer 3" class="w-full h-48 object-cover rounded-lg">
-          <h2 class="text-2xl font-semibold mt-2">Appetizer 3</h2>
-          <p class="text-gray-600 mt-2">Another tasty appetizer option.</p>
-          <p class="text-xl font-semibold mt-2">$6.99</p>
-        </div>
-        <!-- Appetizer 4 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <img src="" alt="Appetizer 4" class="w-full h-48 object-cover rounded-lg">
-          <h2 class="text-2xl font-semibold mt-2">Appetizer 4</h2>
-          <p class="text-gray-600 mt-2">A delightful and crispy appetizer.</p>
-          <p class="text-xl font-semibold mt-2">$7.49</p>
-        </div>
-      </div>
-    </div> 
-
-    <!-- Main Course Section -->
-    <div class="max-w-screen-lg">
-        <h2 class="text-2xl font-semibold">Main Course</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <!-- Main Course 1 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="" alt="Main Course 1" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Main Course 1</h2>
-            <p class="text-gray-600 mt-2">A hearty and satisfying main course.</p>
-            <p class="text-xl font-semibold mt-2">$12.99</p>
-        </div>
-        <!-- Main Course 2 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="" alt="Main Course 2" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Main Course 2</h2>
-            <p class="text-gray-600 mt-2">A savory main course with rich flavors.</p>
-            <p class="text-xl font-semibold mt-2">$14.49</p>
-        </div>
-        <!-- Main Course 3 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="main_course3.jpg" alt="Main Course 3" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Main Course 3</h2>
-            <p class="text-gray-600 mt-2">An exquisite main course option.</p>
-            <p class="text-xl font-semibold mt-2">$16.99</p>
-        </div>
-        <!-- Main Course 4 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="" alt="Main Course 4" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Main Course 4</h2>
-            <p class="text-gray-600 mt-2">A delicious and filling main course.</p>
-            <p class="text-xl font-semibold mt-2">$11.99</p>
-        </div>
-        </div>
+      <% end %>
     </div>
-
-    <!-- Dessert Section -->
-    <div class="max-w-screen-lg">
-        <h2 class="text-2xl font-semibold">Desserts</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <!-- Dessert 1 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="" alt="Dessert 1" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Dessert 1</h2>
-            <p class="text-gray-600 mt-2">A sweet treat to satisfy your cravings.</p>
-            <p class="text-xl font-semibold mt-2">$6.99</p>
-        </div>
-        <!-- Dessert 2 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="" alt="Dessert 2" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Dessert 2</h2>
-            <p class="text-gray-600 mt-2">Indulge in a delightful dessert experience.</p>
-            <p class="text-xl font-semibold mt-2">$8.49</p>
-        </div>
-        <!-- Dessert 3 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="" alt="Dessert 3" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Dessert 3</h2>
-            <p class="text-gray-600 mt-2">A perfect ending to your meal with a sweet twist.</p>
-            <p class="text-xl font-semibold mt-2">$7.99</p>
-        </div>
-        <!-- Dessert 4 -->
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <img src="" alt="Dessert 4" class="w-full h-48 object-cover rounded-lg">
-            <h2 class="text-2xl font-semibold mt-2">Dessert 4</h2>
-            <p class="text-gray-600 mt-2">Satisfy your sweet tooth with this delectable dessert.</p>
-            <p class="text-xl font-semibold mt-2">$9.99</p>
-        </div>
-        </div>
-    </div>
+  </section>
+  <% end %>
 </div>
-  

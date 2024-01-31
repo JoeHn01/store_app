@@ -1,54 +1,41 @@
 <.top_header class="bg-gradient-container p-4">
   <div class="container mx-auto flex justify-between items-center">
-    <h1 class="text-3xl font-bold text-white">
-      <.link href="/" class="text-white hover:text-blue-800">My Store</.link>
-    </h1>
+    <.header class="text-3xl font-bold text-white">
+      <.link href={~p"/"} class="text-white hover:text-blue-800">My Store</.link>
+    </.header>
     <nav class="space-x-4 flex items-center">
-      <.link href="/home_admin_page" class="text-white hover:text-blue-800">Admin</.link>
-      <.link href="/home_page" class="text-white hover:text-blue-800">Home</.link>
-      <.link href="/menu_page" class="text-white hover:text-blue-800">Menu</.link>
-      <.link href="/products_page" class="text-white hover:text-blue-800">Products</.link>
-      <.link href="/about_page" class="text-white hover:text-blue-800">About Us</.link>
-      <.link href="/contact_page" class="text-white hover:text-blue-800">Contact Us</.link>
-
       <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
+        <li>
+          <.link href={~p"/home_page"} class="text-white hover:text-blue-800">Home</.link>
+        </li>
+        <li>
+          <.link href={~p"/menu_page"} class="text-white hover:text-blue-800">Menu</.link>
+        </li>
+        <li>
+          <.link href={~p"/products_page"} class="text-white hover:text-blue-800">Products</.link>
+        </li>
+        <li>
+          <.link href={~p"/about_page"} class="text-white hover:text-blue-800">About Us</.link>
+        </li>
         <%= if @current_user do %>
           <li>
-            <.link
-              href={~p"/user/settings"}
-              class="text-white hover:text-blue-800"
-            >
-              Settings
-            </.link>
+            <.link href={~p"/contact_page"} class="text-white hover:text-blue-800">Contact Us</.link>
           </li>
           <li>
-            <.link
-              href={~p"/user/log_out"}
-              method="delete"
-              class="text-white hover:text-blue-800"
-            >
-              Log out
-            </.link>
+            <.link href={~p"/user/settings"} class="text-white hover:text-blue-800">Settings</.link>
+          </li>
+          <li>
+            <.link href={~p"/user/log_out"} method="delete" class="text-white hover:text-blue-800">Log out</.link>
           </li>
           <li class="text-white hover:text-blue-800">
             <%= @current_user.user_name %>
           </li>
         <% else %>
           <li>
-            <.link
-              href={~p"/user/register"}
-              class="text-white hover:text-blue-800"
-            >
-              Register
-            </.link>
+            <.link href={~p"/user/register"} class="text-white hover:text-blue-800">Register</.link>
           </li>
           <li>
-            <.link
-              href={~p"/user/log_in"}
-              class="text-white hover:text-blue-800"
-            >
-              Log in
-            </.link>
+            <.link href={~p"/user/log_in"} class="text-white hover:text-blue-800">Log in</.link>
           </li>
         <% end %>
       </ul>

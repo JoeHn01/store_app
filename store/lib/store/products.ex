@@ -102,4 +102,31 @@ defmodule Store.Products do
   def change_product(%Product{} = product, attrs \\ %{}) do
     Product.changeset(product, attrs)
   end
+
+  @doc """
+    Fetches products from the database, grouped by category.
+
+    Returns a map where keys are category names and values are lists of products
+    belonging to that category.
+
+    ## Examples
+
+        iex> list_products_by_category()
+        %{
+          "Category A" => [%Product{id: 1, category: "Category A", ...}, ...],
+          "Category B" => [%Product{id: 4, category: "Category B", ...}, ...],
+          # ...
+        }
+
+  """
+  def list_products_by_category() do
+    query =
+      from(product in Product,
+          group_by: [product.category, product.id],
+          select: %{category: product.category, products: product}
+          )
+      |> Repo.all()
+
+    Enum.group_by(query, &(&1.category), &(&1.products))
+  end
 end

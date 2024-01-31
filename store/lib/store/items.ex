@@ -1,6 +1,7 @@
 defmodule Store.Items do
   @moduledoc """
-  The Items context.
+  The Items context contains the
+  functions used for the item table.
   """
 
   import Ecto.Query, warn: false
@@ -102,5 +103,30 @@ defmodule Store.Items do
     Item.changeset(item, attrs)
   end
 
-  alias Store.Items.Item
+  @doc """
+  Fetches items from the database, grouped by category.
+
+  Returns a map where keys are category names and values are lists of items
+  belonging to that category.
+
+  ## Examples
+
+      iex> list_items_by_category()
+      %{
+        "Category A" => [%Item{id: 1, category: "Category A", ...}, ...],
+        "Category B" => [%Item{id: 4, category: "Category B", ...}, ...],
+        # ...
+      }
+
+  """
+  def list_items_by_category() do
+    query =
+      from(item in Item,
+      group_by: [item.category, item.id],
+      select: %{category: item.category, items: item}
+      )
+      |> Repo.all()
+
+    Enum.group_by(query, &(&1.category), &(&1.items))
+  end
  end
