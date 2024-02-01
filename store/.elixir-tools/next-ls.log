@@ -19038,3 +19038,377 @@ Last message received: handle_request %{"id" => 0, "jsonrpc" => "2.0", "method" 
     (stdlib 5.1.1) proc_lib.erl:241: :proc_lib.init_p_do_apply/3
 Last message: {:"$gen_cast", {:incoming, "Content-Length: 222\r\n\r\n{\"jsonrpc\":\"2.0\",\"method\":\"workspace/didChangeWatchedFiles\",\"params\":{\"changes\":[{\"uri\":\"file:///home/joehnfi/Desktop/Personal%20Projects/store_app/store_app/store/lib/store_web/controllers/page_controller.ex\",\"type\":2}]}}Content-Length: 64\r\n\r\n{\"jsonrpc\":\"2.0\",\"method\":\"$/cancelRequest\",\"params\":{\"id\":361}}Content-Length: 221\r\n\r\n{\"jsonrpc\":\"2.0\",\"id\":362,\"method\":\"textDocument/documentSymbol\",\"params\":{\"textDocument\":{\"uri\":\"file:///home/joehnfi/Desktop/Personal%20Projects/store_app/store_app/store/lib/store_web/controllers/page_controller.ex\"}}}Content-Length: 248\r\n\r\n{\"jsonrpc\":\"2.0\",\"id\":363,\"method\":\"textDocument/hover\",\"params\":{\"textDocument\":{\"uri\":\"file:///home/joehnfi/Desktop/Personal%20Projects/store_app/store_app/store/lib/store_web/controllers/page_controller.ex\"},\"position\":{\"line\":6,\"character\":5}}}Content-Length: 64\r\n\r\n{\"jsonrpc\":\"2.0\",\"method\":\"$/cancelRequest\",\"params\":{\"id\":363}}Content-Length: 1094\r\n\r\n{\"jsonrpc\":\"2.0\",\"method\":\"textDocument/didChange\",\"params\":{\"textDocument\":{\"uri\":\"file:///home/joehnfi/Desktop/Personal%20Projects/stor"}}
 State: %{lsp: #PID<0.312.0>, awaiting_response: %{}, comm_data: nil, comm: GenLSP.Communication.Stdio}
+
+15:04:28.790 [info] Loading 137 CA(s) from :otp store
+
+15:04:29.324 id=0 [debug] handled request client -> server initialize in 375ms
+
+15:04:29.340 [debug] sent notification server -> client window/logMessage
+
+15:04:29.360 [debug] sent notification server -> client window/logMessage
+
+15:04:29.360 id=68 [debug] sent request server -> client client/registerCapability
+
+15:04:29.360 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+15:04:29.418 [debug] sent notification server -> client window/logMessage
+
+15:04:29.430 [debug] sent notification server -> client $/progress
+
+15:04:29.496 [debug] sent notification server -> client window/logMessage
+
+15:04:29.496 [info] Beginning DB migration...
+
+15:04:29.520 [debug] sent notification server -> client window/logMessage
+
+15:04:29.520 [info] Database is on the latest version: 5
+
+15:04:29.520 [debug] sent notification server -> client window/logMessage
+
+15:04:29.520 [info] Finished DB migration...
+
+15:04:29.520 [debug] sent notification server -> client window/logMessage
+
+15:04:29.520 [info] Using `elixir` found at: /usr/bin/elixir
+
+15:04:29.521 [debug] handled notification client -> server initialized in 189ms
+
+15:04:29.531 [debug] handled notification client -> server textDocument/didOpen in 10ms
+
+15:04:29.564 id=1 [debug] handled request client -> server textDocument/documentSymbol in 33ms
+
+15:04:30.536 [debug] sent notification server -> client window/logMessage
+
+15:04:30.536 [info] Connected to node nextls-runtime-1706738669520056479@joehnfi-Latitude-5490
+
+15:04:30.818 [debug] sent notification server -> client $/progress
+
+15:04:30.820 [debug] sent notification server -> client window/logMessage
+
+15:04:30.825 [debug] sent notification server -> client $/progress
+
+15:04:30.836 [debug] sent notification server -> client window/logMessage
+
+15:04:30.836 [warning] Unexpected compiler response: {:error, %{message: "Could not find a Mix.Project, please ensure you are running Mix in a directory with a mix.exs file", __struct__: Mix.NoProjectError, __exception__: true, mix: true}}
+
+15:04:30.838 [debug] sent notification server -> client $/progress
+
+15:04:30.938 id=2 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+15:04:34.054 id=3 [debug] handled request client -> server textDocument/hover in 10ms
+
+15:04:35.077 id=4 [debug] handled request client -> server textDocument/hover in 481µs
+
+15:05:16.926 id=5 [debug] handled request client -> server textDocument/hover in 2ms
+
+15:16:02.956 [debug] handled notification client -> server textDocument/didClose in 4ms
+
+15:16:26.784 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 9ms
+
+15:21:10.897 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 516µs
+
+15:22:57.708 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 243µs
+
+15:23:27.231 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 397µs
+
+15:23:48.037 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 292µs
+
+15:25:19.771 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 174µs
+
+15:25:37.566 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 490µs
+
+15:25:46.321 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 390µs
+
+15:26:02.428 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 429µs
+
+15:26:29.874 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 522µs
+
+15:27:15.051 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 579µs
+
+15:28:00.887 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 186µs
+
+15:28:07.290 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 203µs
+
+15:28:15.081 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 229µs
+
+15:28:58.195 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 421µs
+
+15:29:07.329 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 318µs
+
+15:29:15.677 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 544µs
+
+15:32:53.746 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 238µs
+
+15:33:03.552 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 481µs
+
+15:34:33.430 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 608µs
+
+15:34:43.692 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 212µs
+
+15:35:06.564 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 630µs
+
+15:35:11.786 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 518µs
+
+15:38:40.788 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 594µs
+
+15:39:09.130 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 498µs
+
+15:40:04.519 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 415µs
+
+15:42:48.474 [debug] handled notification client -> server textDocument/didOpen in 728µs
+
+15:42:48.489 id=6 [debug] handled request client -> server textDocument/documentSymbol in 10ms
+
+15:43:07.077 id=7 [debug] handled request client -> server textDocument/hover in 1ms
+
+15:46:10.989 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 266µs
+
+15:46:25.016 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 359µs
+
+15:46:36.259 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 473µs
+
+15:47:26.418 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 881µs
+
+15:47:36.169 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 203µs
+
+15:47:51.992 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 565µs
+
+15:48:13.158 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 358µs
+
+15:48:32.629 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 799µs
+
+15:48:38.250 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 217µs
+
+15:48:46.550 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 186µs
+
+15:48:53.789 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 537µs
+
+15:49:03.432 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 630µs
+
+15:49:30.658 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 375µs
+
+15:49:42.759 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 434µs
+
+16:00:39.326 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 175µs
+
+16:00:45.684 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 907µs
+
+16:01:06.137 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 622µs
+
+16:01:12.351 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 469µs
+
+16:01:30.421 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 292µs
+
+16:01:40.176 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 362µs
+
+16:02:15.680 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 476µs
+
+16:02:58.409 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 377µs
+
+16:03:06.004 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 203µs
+
+16:03:16.753 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 279µs
+
+16:03:23.781 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 517µs
+
+16:06:43.884 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 386µs
+
+16:07:02.585 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 510µs
+
+16:07:33.973 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 576µs
+
+16:07:42.245 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 329µs
+
+16:07:51.688 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 325µs
+
+16:08:00.804 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 251µs
+
+16:08:08.016 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 186µs
+
+16:08:17.183 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 762µs
+
+16:08:24.088 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 312µs
+
+16:09:42.731 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 308µs
+
+16:09:49.729 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 541µs
+
+16:10:00.921 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 857µs
+
+16:10:13.347 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 360µs
+
+16:10:18.639 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 149µs
+
+16:19:24.320 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 575µs
+
+16:20:48.688 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+16:21:01.038 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 848µs
+
+16:26:29.767 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 524µs
+
+16:26:50.590 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 599µs
+
+16:29:48.525 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 437µs
+
+16:29:59.989 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 307µs
+
+16:33:30.428 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 560µs
+
+16:33:52.383 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 195µs
+
+16:34:25.111 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 735µs
+
+16:34:50.395 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 393µs
+
+16:35:20.853 id=8 [debug] handled request client -> server shutdown in 5ms
+
+16:35:20.855 [debug] sent notification server -> client window/logMessage
+
+16:35:20.855 [info] The runtime for store has successfully shut down.
+
+16:35:20.856 [info] Failed to write to standard out (:epipe)
+
+16:35:20.858 [debug] sent notification server -> client window/logMessage
+
+16:35:20.858 [info] Beginning DB migration...
+
+16:35:20.859 [debug] sent notification server -> client window/logMessage
+
+16:35:20.860 [info] Database is on the latest version: 5
+
+16:35:20.860 [debug] sent notification server -> client window/logMessage
+
+16:35:20.860 [info] Finished DB migration...
+
+20:15:56.828 [info] Loading 137 CA(s) from :otp store
+
+20:15:57.261 id=0 [debug] handled request client -> server initialize in 284ms
+
+20:15:57.282 [debug] sent notification server -> client window/logMessage
+
+20:15:57.305 [debug] sent notification server -> client window/logMessage
+
+20:15:57.305 id=3 [debug] sent request server -> client client/registerCapability
+
+20:15:57.305 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+20:15:57.349 [debug] sent notification server -> client window/logMessage
+
+20:15:57.364 [debug] sent notification server -> client $/progress
+
+20:15:57.419 [debug] sent notification server -> client window/logMessage
+
+20:15:57.419 [info] Beginning DB migration...
+
+20:15:57.445 [debug] sent notification server -> client window/logMessage
+
+20:15:57.445 [info] Database is on the latest version: 5
+
+20:15:57.445 [debug] sent notification server -> client window/logMessage
+
+20:15:57.445 [info] Finished DB migration...
+
+20:15:57.446 [debug] sent notification server -> client window/logMessage
+
+20:15:57.446 [info] Using `elixir` found at: /usr/bin/elixir
+
+20:15:57.447 [debug] handled notification client -> server initialized in 174ms
+
+20:15:57.457 [debug] handled notification client -> server textDocument/didOpen in 9ms
+
+20:15:57.492 id=1 [debug] handled request client -> server textDocument/documentSymbol in 35ms
+
+20:15:58.460 [debug] sent notification server -> client window/logMessage
+
+20:15:58.460 [info] Connected to node nextls-runtime-1706757357445199113@joehnfi-Latitude-5490
+
+20:15:58.693 [debug] sent notification server -> client $/progress
+
+20:15:58.695 [debug] sent notification server -> client window/logMessage
+
+20:15:58.699 [debug] sent notification server -> client $/progress
+
+20:15:58.708 [debug] sent notification server -> client window/logMessage
+
+20:15:58.709 [warning] Unexpected compiler response: {:error, %{message: "Could not find a Mix.Project, please ensure you are running Mix in a directory with a mix.exs file", __struct__: Mix.NoProjectError, __exception__: true, mix: true}}
+
+20:15:58.710 [debug] sent notification server -> client $/progress
+
+20:15:58.758 id=2 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+20:17:12.637 id=3 [debug] handled request client -> server textDocument/hover in 34ms
+
+20:17:16.088 [debug] handled notification client -> server textDocument/didClose in 4ms
+
+20:24:31.191 [debug] handled notification client -> server textDocument/didOpen in 131µs
+
+20:24:31.207 id=4 [debug] handled request client -> server textDocument/documentSymbol in 186µs
+
+20:24:31.519 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 17ms
+
+20:24:34.013 [debug] handled notification client -> server textDocument/didOpen in 396µs
+
+20:24:34.022 id=5 [debug] handled request client -> server textDocument/documentSymbol in 1ms
+
+20:24:38.396 [debug] handled notification client -> server textDocument/didChange in 21ms
+
+20:24:38.655 id=6 [debug] handled request client -> server textDocument/documentSymbol in 2ms
+
+20:24:40.067 id=7 [debug] handled request client -> server textDocument/hover in 1ms
+
+20:24:40.517 id=8 [debug] handled request client -> server textDocument/hover in 1ms
+
+20:24:43.068 [debug] handled notification client -> server textDocument/didChange in 438µs
+
+20:24:43.079 [debug] sent notification server -> client $/progress
+
+20:24:43.079 [debug] handled notification client -> server textDocument/didSave in 10ms
+
+20:24:43.082 [debug] sent notification server -> client window/logMessage
+
+20:24:43.082 [debug] sent notification server -> client $/progress
+
+20:24:43.082 [warning] Unexpected compiler response: {:error, %{message: "Could not find a Mix.Project, please ensure you are running Mix in a directory with a mix.exs file", __struct__: Mix.NoProjectError, __exception__: true, mix: true}}
+
+20:24:43.384 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 131µs
+
+20:24:43.576 id=9 [debug] handled request client -> server textDocument/documentSymbol in 551µs
+
+20:26:48.904 [debug] handled notification client -> server textDocument/didClose in 210µs
+
+20:26:49.246 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 1ms
+
+20:26:49.669 id=10 [debug] handled request client -> server textDocument/hover in 548µs
+
+20:29:49.298 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 380µs
+
+20:30:00.346 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 383µs
+
+20:30:10.430 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 496µs
+
+20:30:17.191 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 252µs
+
+20:30:59.188 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 328µs
+
+20:31:06.313 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 193µs
+
+20:31:12.382 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 160µs
+
+20:31:28.748 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 509µs
+
+20:31:36.117 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 656µs
+
+20:32:13.812 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 210µs
+
+20:33:01.502 [debug] handled notification client -> server $/setTrace in 4ms
+
+20:33:03.447 [debug] handled notification client -> server textDocument/didClose in 123µs
+
+20:38:22.530 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 199µs
+
+20:39:25.046 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 491µs
+
+20:39:41.690 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 270µs
+
+20:39:54.421 [debug] handled notification client -> server workspace/didChangeWatchedFiles in 102µs

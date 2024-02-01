@@ -15,27 +15,27 @@
           <.link href={~p"/products_page"} class="text-white hover:text-blue-800">Products</.link>
         </li>
         <li>
-          <.link href={~p"/about_page"} class="text-white hover:text-blue-800">About Us</.link>
+          <.link href={~p"/about_page"} class="text-white hover:text-blue-800">About</.link>
+        </li>
+        <li>
+          <.link href={~p"/contact_page"} class="text-white hover:text-blue-800">Contact</.link>
         </li>
         <%= if @current_user do %>
-          <li>
-            <.link href={~p"/contact_page"} class="text-white hover:text-blue-800">Contact Us</.link>
-          </li>
-          <li>
-            <.link href={~p"/user/settings"} class="text-white hover:text-blue-800">Settings</.link>
-          </li>
-          <li>
-            <.link href={~p"/user/log_out"} method="delete" class="text-white hover:text-blue-800">Log out</.link>
-          </li>
-          <li class="text-white hover:text-blue-800">
-            <%= @current_user.user_name %>
+          <li class="relative group">
+            <button class="text-white hover:text-blue-800 focus:outline-none" id="userDropdownButton">
+              <%= @current_user.user_name %>
+            </button>
+            <div class="hidden dropdown-menu">
+              <.link href={~p"/user/settings"} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</.link>
+              <.link href={~p"/user/log_out"} method="delete" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Log out</.link>
+            </div>
           </li>
         <% else %>
           <li>
             <.link href={~p"/user/register"} class="text-white hover:text-blue-800">Register</.link>
           </li>
           <li>
-            <.link href={~p"/user/log_in"} class="text-white hover:text-blue-800">Log in</.link>
+            <.link href={~p"/user/log_in"} class="text-white hover:text-blue-800">Login</.link>
           </li>
         <% end %>
       </ul>
@@ -45,18 +45,19 @@
 
 <div class="content-container">
   <%= for {category, items} <- @items_by_category do %>
-  <section class="category-heading">
-    <.header><%= category %></.header>
-    <div class="category-items">
-      <%= for item <- items do %>
-        <div class="category-item">
-          <img src="" class="w-full h-48 object-cover rounded-lg">
-          <.header><%= item.name %></.header>
-          <p><%= item.description %></p>
-          <p class="price">$<%= Decimal.to_string(item.price) %></p>
-        </div>
-      <% end %>
-    </div>
-  </section>
+    <section class="category-heading">
+      <.header><%= category %></.header>
+      <div class="category-items">
+        <%= for item <- items do %>
+          <div class="category-item">
+            <img src="" class="w-full h-48 object-cover rounded-lg">
+            <.header><%= item.name %></.header>
+            <p><%= item.description %></p>
+            <p class="price">$<%= Decimal.to_string(item.price) %></p>
+            <.button class="add-to-order-button" data-item-id="#{item.id}">Add to Order</.button>
+          </div>
+        <% end %>
+      </div>
+    </section>
   <% end %>
 </div>
