@@ -112,6 +112,13 @@ defmodule StoreWeb.Router do
       on_mount: [{StoreWeb.UserAuth, :mount_current_user}] do
       live "/user/confirm/:token", UserConfirmationLive, :edit
       live "/user/confirm", UserConfirmationInstructionsLive, :new
+
+      live "/orders", OrderLive.Index, :index
+      live "/orders/new", OrderLive.Index, :new
+      live "/orders/:id/edit", OrderLive.Index, :edit
+
+      live "/orders/:id", OrderShowLive.Show, :show
+      live "/orders/:id/show/edit", OrderShowLive.Show, :edit
     end
   end
 end
