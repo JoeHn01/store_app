@@ -25,6 +25,6 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
+# Persisting data in this volume is not working.
 volumes:
   db_data:
-    driver: local
