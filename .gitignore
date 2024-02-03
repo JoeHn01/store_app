@@ -1,14 +1,17 @@
 # The directory Mix will write compiled artifacts to.
 /store/_build/
 
-# If you run "mix test --cover", coverage assets end up here.
-# /store/cover/
-
 # The directory Mix downloads your dependencies sources to.
 /store/deps/
 
 # The file that contains environment variables
 /store/.env
+
+# Ignore assets that are produced by build tools.
+/store/priv/static/assets/
+
+# If you run "mix test --cover", coverage assets end up here.
+# /store/cover/
 
 # Where 3rd-party dependencies like ExDoc output generated docs.
 # /store/doc/
@@ -27,9 +30,6 @@
 
 # Ignore package tarball (built via "mix hex.build").
 # store-*.tar
-
-# Ignore assets that are produced by build tools.
-# /store/priv/static/assets/
 
 # Ignore digested assets cache.
 # /store/priv/static/cache_manifest.json
