@@ -7,6 +7,9 @@
 # The directory Mix downloads your dependencies sources to.
 /store/deps/
 
+# The file that contains environment variables
+/store/.env
+
 # Where 3rd-party dependencies like ExDoc output generated docs.
 # /store/doc/
 
